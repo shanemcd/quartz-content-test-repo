@@ -1,7 +1,5 @@
 FROM registry.fedoraproject.org/fedora
 
-ARG QUARTZ_REF=v4
-
 USER root
 
 RUN dnf install -y git make nodejs && \
@@ -10,7 +8,10 @@ RUN dnf install -y git make nodejs && \
     npm install -g npm@latest && \
     dnf remove -y nodejs
 
-RUN cd /opt && git clone https://github.com/jackyzha0/quartz.git && \
+ARG QUARTZ_FORK=jackyzha0
+ARG QUARTZ_REF=v4
+
+RUN cd /opt && git clone https://github.com/${QUARTZ_FORK}/quartz.git && \
     cd quartz && git checkout ${QUARTZ_REF} && \
     npm ci
 
