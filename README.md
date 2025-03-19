@@ -1,7 +1,7 @@
 ### What is this repo?
 
 This repo was created to test out the ability to store content for a [Quartz](http://quartz.jzhao.xyz) site
-in a separate Git repository.
+in a separate Git repository. The issue was reported in https://github.com/jackyzha0/quartz/issues/1857.
 
 ### How to use this repo
 
