@@ -33,7 +33,10 @@ QUARTZ_FORK=shanemcd QUARTZ_REF=git-the-right-date make -B
 ### How to test changes to Quartz
 
 By setting the `QUARTZ_REPO_PATH` environment variable, we can mount our local
-copy of Quartz into our test container:
+copy of Quartz into our test container.
+
+**Note** you will need to set `defaultDateType: "modified",` in
+`quartz.config.ts` for this to work properly.
 
 ```
 QUARTZ_REPO_PATH=$HOME/github/jackyzha0/quartz make
